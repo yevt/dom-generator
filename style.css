@@ -1,0 +1,67 @@
+@import "reset.css";
+
+html, body {
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+}
+
+body {
+	background: url('world.png');
+}
+
+.house {
+	position: absolute;
+	background: url(wall.png);
+	margin: 0 auto;
+	margin-top: 200px;
+
+	z-index: 1;
+	border: 2px solid #222;
+}
+
+.tile {
+	z-index: inherit;
+	display: inline-block;
+	vertical-align: top;
+	width: 100px;
+
+	/*hacks*/
+	display:-moz-inline-stack;
+	zoom:1;
+	*display:inline;
+}
+
+.short {
+	height: 88px;
+}
+
+.tall {
+	height: 157px;
+}
+
+.this_is_not_my_house {
+	-moz-box-shadow: 11px 8px 50px -10px #666666;
+	-webkit-box-shadow: 11px 8px 50px -10px #666;
+	box-shadow: 11px 8px 50px -10px black;
+	background-image: url('wall.png');
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+	border: 2px solid #222;
+	display: block;
+	color: #2E0808;
+	font-family: arial;
+	font-size: 24px;
+	font-weight: bold;
+	padding: 10px 40px;
+	text-decoration: none;
+	text-shadow: 1px 1px 0px #C2C2C2;
+	position: relative;
+	margin: 0 auto;
+	margin-top: 50px;
+	z-index: 2;
+}
+.this_is_not_my_house:active {
+	 top:1px;
+}
