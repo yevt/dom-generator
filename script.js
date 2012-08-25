@@ -45,7 +45,7 @@
 		return (value < 10) ? '0' + value : '' + value;
 	}
 
-	function Window() {};
+	function Window() {}
 	Window.prototype.init = function() {
 		return this.generate().render();
 	};
@@ -54,9 +54,8 @@
 		this.type = (Math.random() < .5) ? SHORT_WINDOW : TALL_WINDOW,
 		this.tileIndex = Math.floor(Math.random() * TILES_COUNT);
 		this.element = $('<div/>').addClass('tile ' + this.type);
-		this.element.click(function(){
-			this.nextTile;
-		}.bind(this));
+
+		//console.log(this.element);
 		return this;
 	};
 
@@ -66,15 +65,7 @@
 		return this;
 	};
 
-	Window.prototype.nextTile = function() {
-		this.tileIndex++;
-		this.tileIndex %= TILES_COUNT;
-		this.render();
-		return this;
-	};
-
-
-	function House() {};
+	function House() {}
 	House.prototype.init = function(house) {
 		this.home = house;
 		this.world = $(window);
@@ -127,5 +118,4 @@
 
 	var home = new House().init($('.house'));
 	$('.this_is_not_my_house').click(home.render.bind(home));
-
 }());
